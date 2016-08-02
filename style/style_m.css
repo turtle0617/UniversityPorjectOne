@@ -1,0 +1,125 @@
+@media screen and (max-width: 1199.9px) and (min-width: 640px) {
+  /* line 2, ../sass/style_m.scss */
+  #main {
+    text-align: center;
+  }
+  /* line 4, ../sass/style_m.scss */
+  #main header {
+    height: 530px;
+    background-image: url("../image/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+  /* line 10, ../sass/style_m.scss */
+  #main header .title {
+    height: 100px;
+    padding-top: 200px;
+  }
+  /* line 15, ../sass/style_m.scss */
+  #main #video {
+    padding: 20px;
+  }
+  /* line 18, ../sass/style_m.scss */
+  #main #model {
+    padding: 30px 0;
+    background-color: #FFE8DF;
+  }
+  /* line 21, ../sass/style_m.scss */
+  #main #model .tx {
+    width: 640px;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  /* line 28, ../sass/style_m.scss */
+  #main #model .tx h1 {
+    margin-bottom: 30px;
+  }
+  /* line 31, ../sass/style_m.scss */
+  #main #model .tx p {
+    margin: 10px;
+    font-size: 1.2em;
+  }
+  /* line 37, ../sass/style_m.scss */
+  #main #model .tool img {
+    width: 50px;
+  }
+  /* line 40, ../sass/style_m.scss */
+  #main #model .tool .bt {
+    margin-top: 30px;
+  }
+  /* line 42, ../sass/style_m.scss */
+  #main #model .tool .bt button {
+    font-family: Microsoft JhengHei;
+    margin: 5px;
+  }
+  /* line 51, ../sass/style_m.scss */
+  #main #show {
+    height: 1350px;
+    background-color: #FFEC9E;
+  }
+  /* line 54, ../sass/style_m.scss */
+  #main #show #show_1, #main #show #show_2, #main #show #show_3 {
+    height: 450px;
+  }
+  /* line 55, ../sass/style_m.scss */
+  #main #show .counters {
+    padding: 25px 20px;
+  }
+  /* line 57, ../sass/style_m.scss */
+  #main #show .counters img {
+    width: 550px;
+    border: 5px solid #fff;
+  }
+  /* line 58, ../sass/style_m.scss */
+  #main #show .counters hr {
+    border-color: #486072;
+  }
+  /* line 61, ../sass/style_m.scss */
+  #main #order {
+    height: 700px;
+    padding: 100px;
+  }
+  /* line 64, ../sass/style_m.scss */
+  #main #order form {
+    margin: 50px auto;
+  }
+  /* line 66, ../sass/style_m.scss */
+  #main #order form textarea {
+    width: 200px;
+    margin: 5px auto;
+  }
+  /* line 73, ../sass/style_m.scss */
+  #main #QandA {
+    height: 700px;
+    padding: 100px;
+    background-color: #A7D6FA;
+  }
+  /* line 77, ../sass/style_m.scss */
+  #main #QandA .usually {
+    background-color: #FFF;
+    padding: 50px;
+  }
+  /* line 80, ../sass/style_m.scss */
+  #main #QandA .usually h1 {
+    margin-bottom: 50px;
+  }
+  /* line 81, ../sass/style_m.scss */
+  #main #QandA .usually p {
+    text-align: left;
+    font-size: 1.2em;
+    font-family: Microsoft JhengHei;
+  }
+  /* line 86, ../sass/style_m.scss */
+  #main #QandA .usually .question {
+    margin-top: 50px;
+  }
+  /* line 93, ../sass/style_m.scss */
+  #main footer {
+    padding: 10px;
+    height: 120px;
+    background-color: #FFCD75;
+  }
+}

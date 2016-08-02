@@ -1,0 +1,142 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 6, ../sass/style.scss */
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* line 7, ../sass/style.scss */
+.text_width {
+  width: 150px;
+  display: inline-block;
+  margin: 5px;
+}
+
+@media screen and (min-width: 1200px) {
+  /* line 10, ../sass/style.scss */
+  #main {
+    text-align: center;
+  }
+  /* line 12, ../sass/style.scss */
+  #main header {
+    height: 600px;
+    background-image: url("../image/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+  /* line 18, ../sass/style.scss */
+  #main header .title {
+    height: 100px;
+    padding-top: 300px;
+  }
+  /* line 23, ../sass/style.scss */
+  #main #video {
+    height: 500px;
+    padding: 100px;
+  }
+  /* line 27, ../sass/style.scss */
+  #main #model {
+    padding: 100px 0;
+    background-color: #FFE8DF;
+    height: 680px;
+  }
+  /* line 31, ../sass/style.scss */
+  #main #model .tx {
+    text-align: left;
+  }
+  /* line 33, ../sass/style.scss */
+  #main #model .tx h1 {
+    margin-bottom: 30px;
+  }
+  /* line 36, ../sass/style.scss */
+  #main #model .tx p {
+    margin: 10px;
+    font-size: 1.2em;
+  }
+  /* line 42, ../sass/style.scss */
+  #main #model .tool img {
+    width: 50px;
+  }
+  /* line 45, ../sass/style.scss */
+  #main #model .tool .bt {
+    margin-top: 30px;
+  }
+  /* line 47, ../sass/style.scss */
+  #main #model .tool .bt button {
+    font-family: Microsoft JhengHei;
+    margin: 5px;
+  }
+  /* line 56, ../sass/style.scss */
+  #main #show {
+    height: 1350px;
+    background-color: #FFEC9E;
+  }
+  /* line 59, ../sass/style.scss */
+  #main #show #show_1, #main #show #show_2, #main #show #show_3 {
+    height: 450px;
+  }
+  /* line 60, ../sass/style.scss */
+  #main #show .counters {
+    padding: 25px 20px;
+  }
+  /* line 62, ../sass/style.scss */
+  #main #show .counters img {
+    width: 550px;
+    border: 5px solid #fff;
+  }
+  /* line 63, ../sass/style.scss */
+  #main #show .counters hr {
+    border-color: #486072;
+  }
+  /* line 66, ../sass/style.scss */
+  #main #order {
+    height: 700px;
+    padding: 100px;
+  }
+  /* line 69, ../sass/style.scss */
+  #main #order form {
+    margin: 50px auto;
+  }
+  /* line 71, ../sass/style.scss */
+  #main #order form p {
+    font-size: 1.2em;
+  }
+  /* line 72, ../sass/style.scss */
+  #main #order form textarea {
+    width: 200px;
+    margin: 5px auto;
+  }
+  /* line 79, ../sass/style.scss */
+  #main #QandA {
+    height: 700px;
+    padding: 100px;
+    background-color: #A7D6FA;
+  }
+  /* line 83, ../sass/style.scss */
+  #main #QandA .usually {
+    background-color: #FFF;
+    padding: 50px;
+  }
+  /* line 86, ../sass/style.scss */
+  #main #QandA .usually h1 {
+    margin-bottom: 50px;
+  }
+  /* line 87, ../sass/style.scss */
+  #main #QandA .usually p {
+    text-align: left;
+    font-size: 1.2em;
+    font-family: Microsoft JhengHei;
+  }
+  /* line 92, ../sass/style.scss */
+  #main #QandA .usually .question {
+    margin-top: 50px;
+  }
+  /* line 99, ../sass/style.scss */
+  #main footer {
+    padding: 10px;
+    height: 120px;
+    background-color: #FFCD75;
+  }
+}

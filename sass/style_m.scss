@@ -1,0 +1,99 @@
+@media screen and (max-width: 1199.9px) and (min-width: 640px){
+ 		#main{
+ 		text-align: center;
+ 		header{
+ 			height: 530px;
+ 			background-image: url("../image/bg.jpg");
+ 			background-repeat: no-repeat;
+ 			background-size: 100% auto;
+
+ 			.title{
+ 				height: 100px;
+ 				padding-top:200px;
+ 			}
+ 		}
+ 		#video{
+ 			padding: 20px;
+ 		}
+ 		#model{
+ 			padding:30px 0;
+ 			background-color:#FFE8DF;
+ 			.tx{
+ 				width:640px;
+ 				margin:10px auto;
+ 				padding: 10px;
+ 				text-align: left;
+ 				background-color:#fff;
+ 				border-radius:10px;
+ 				h1{
+ 					margin-bottom:30px; 
+ 				}
+ 				p{
+ 					margin: 10px;
+ 					font-size: 1.2em;
+ 				}
+ 			}
+ 			.tool{
+ 				img{
+ 					width:50px;
+ 				}
+ 				.bt{
+ 					margin-top: 30px;
+ 					button{
+ 						font-family:Microsoft JhengHei;
+ 						margin: 5px;
+ 					}	
+
+ 				}
+ 			}
+
+ 		}
+ 		#show{
+ 			height:1350px;
+ 			background-color:#FFEC9E;
+ 			#show_1,#show_2,#show_3{height:450px;}
+ 			.counters{
+ 				padding:25px 20px;
+ 				img{width:550px;border:5px solid #fff}
+ 				hr{border-color:#486072;}
+ 			}
+ 		}
+ 		#order{
+ 			height:700px;
+ 			padding:100px;
+ 			form{
+ 				margin: 50px auto;
+ 				textarea{
+ 					width:200px;
+ 					margin:5px auto;
+ 				}
+ 			}
+
+ 		}
+ 		#QandA{
+ 			height:700px;
+ 			padding:100px; 
+ 			background-color:#A7D6FA;
+ 			.usually{
+ 				background-color: #FFF;
+ 				padding: 50px;
+ 				h1{margin-bottom:50px;}
+ 				p{
+ 					text-align: left;
+ 					font-size: 1.2em;
+ 					font-family:Microsoft JhengHei;
+ 				}
+ 				.question{
+ 					margin-top:50px; 
+ 				}	
+ 			}
+ 			
+ 		}
+
+ 		footer{
+ 			padding:10px;
+ 			height: 120px; 
+ 			background-color:#FFCD75;
+ 		}
+ 	}
+ }
