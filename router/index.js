@@ -20,6 +20,106 @@ router.get('/', function(req, res) {
 });
 
 // router.post('/send', function(req, res, next) {
+//     var date = new Date();
+//     var Month = date.getMonth(),
+//         Day = date.getDay(),
+//         Hours = date.getHours(),
+//         Minutes = date.getMinutes(),
+//         Seconds = date.getSeconds();
+//     var time = date.getFullYear()+'/'+(Month<10 ? '0' : '')+Month+'/'+(Day<10 ? '0' : '')+Day+' '+(Hours<10 ? '0' : '')+Hours+':'+(Minutes<10 ? '0' : '')+Minutes+':'+(Seconds<10 ? '0' : '')+Seconds;
+//     var form1 = {
+//             MerchantID: , //廠商編號(由allpay 提供)
+//             MerchantTradeNo: req.body.MerchantTradeNo, //廠商交易編號(由商家自訂)
+//             MerchantTradeDate: time, //廠商交易時間
+//             PaymentType: 'aio', //交易類型
+//             TotalAmount: req.body.TotalAmount, //交易金額
+//             TradeDesc: '歐付寶', //交易描述
+//             ItemName: '測試用30元', //商品名稱
+//             ReturnURL: rURL, //回傳網址
+//             ChoosePayment: req.body.ChoosePayment //付款方式
+//         }
+//         console.log(form1);
+//     request.post({
+//         url: 'https://payment.allpay.com.tw/AioHelper/GenCheckMacValue',
+//         form: form1
+//     }, function(err, httpResponse, body) {
+//         console.log(body);
+//         var form2 = {
+//             MerchantID: ,
+//             MerchantTradeNo: req.body.MerchantTradeNo,
+//             MerchantTradeDate: time,
+//             PaymentType: 'aio',
+//             TotalAmount: req.body.TotalAmount,
+//             TradeDesc: '歐付寶',
+//             ItemName: '測試用30元 X1',
+//             ReturnURL: rURL,
+//             ChoosePayment: req.body.ChoosePayment,
+//             CheckMacValue: body
+//         }
+//         console.log(form2);
+//         request.post({
+//             url: 'https://payment.allpay.com.tw/Cashier/AioCheckOut/V2',
+//             form: form2
+//         }, function(err, httpResponse, body) {
+//             $ = cheerio.load(body);
+//             $("head").prepend('<base href="https://payment-stage.allpay.com.tw" target="_blank"/>');
+//             res.send($.html());
+//         });
+//     });
+// });
+
+router.post('/send', function(req, res, next) {
+    var date = new Date();
+    var Month = date.getMonth(),
+        Day = date.getDay(),
+        Hours = date.getHours(),
+        Minutes = date.getMinutes(),
+        Seconds = date.getSeconds();
+    var time = date.getFullYear()+'/'+(Month<10 ? '0' : '')+Month+'/'+(Day<10 ? '0' : '')+Day+' '+(Hours<10 ? '0' : '')+Hours+':'+(Minutes<10 ? '0' : '')+Minutes+':'+(Seconds<10 ? '0' : '')+Seconds;
+    var form1 = {
+            MerchantID: 2000132, //廠商編號(由allpay 提供)
+            MerchantTradeNo: req.body.MerchantTradeNo, //廠商交易編號(由商家自訂)
+            MerchantTradeDate: time, //廠商交易時間
+            PaymentType: 'aio', //交易類型
+            TotalAmount: req.body.TotalAmount, //交易金額
+            TradeDesc: 'allpay 商城購物-', //交易描述
+            ItemName: '測試用30元 X1', //商品名稱
+            ReturnURL: rURL, //回傳網址
+            ChoosePayment: req.body.ChoosePayment //付款方式
+        }
+        console.log(form1);
+    request.post({
+        url: 'https://payment-stage.allpay.com.tw/AioHelper/GenCheckMacValue',
+        form: form1
+    }, function(err, httpResponse, body) {
+        console.log(body);
+        var form2 = {
+            MerchantID: 2000132,
+            MerchantTradeNo: req.body.MerchantTradeNo,
+            MerchantTradeDate: time,
+            PaymentType: 'aio',
+            TotalAmount: req.body.TotalAmount,
+            TradeDesc: 'allpay 商城購物-',
+            ItemName: '測試用30元 X1',
+            ReturnURL: rURL,
+            ChoosePayment: req.body.ChoosePayment,
+            CheckMacValue: body
+        }
+        console.log(form2);
+        request.post({
+            url: 'https://payment-stage.allpay.com.tw/Cashier/AioCheckOut/V2',
+            form: form2
+        }, function(err, httpResponse, body) {
+            $ = cheerio.load(body);
+            $("head").prepend('<base href="https://payment-stage.allpay.com.tw" target="_blank"/>');
+            res.send($.html());
+        });
+    });
+});
+
+
+
+// router.post('/send', function(req, res, next) {
 //     //先取得檢查碼
 //     var date = new Date();
 //     var time = date.getFullYear()+'/'+date.getMonth()+'/'+date.getDay()+' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
@@ -65,83 +165,6 @@ router.get('/', function(req, res) {
 //     });
 // });
 
-router.post('/send', function(req, res, next) {
-    var date = new Date();
-    var time = date.getFullYear()+'/'+date.getMonth()+'/'+date.getDay()+' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
-    var form1 = {
-            MerchantID: 2000132,
-            MerchantTradeNo: req.body.MerchantTradeNo,
-            MerchantTradeDate: req.body.MerchantTradeDate,
-            PaymentType: req.body.PaymentType,
-            TotalAmount: req.body.TotalAmount,
-            TradeDesc: req.body.TradeDesc,
-            ItemName: req.body.ItemName,
-            ReturnURL: rURL,
-            ChoosePayment: req.body.ChoosePayment
-        }
-        // console.log(form1);
-    request.post({
-        url: 'https://payment-stage.allpay.com.tw/AioHelper/GenCheckMacValue',
-        form: form1
-    }, function(err, httpResponse, body) {
-        console.log(body);
-        var form2 = {
-            MerchantID: 2000132,
-            MerchantTradeNo: req.body.MerchantTradeNo,
-            MerchantTradeDate: req.body.MerchantTradeDate,
-            PaymentType: req.body.PaymentType,
-            TotalAmount: req.body.TotalAmount,
-            TradeDesc: req.body.TradeDesc,
-            ItemName: req.body.ItemName,
-            ReturnURL: rURL,
-            ChoosePayment: req.body.ChoosePayment,
-            CheckMacValue: body
-        }
-        console.log(form2);
-        request.post({
-            url: 'https://payment-stage.allpay.com.tw/Cashier/AioCheckOut/V2',
-            form: form2
-        }, function(err, httpResponse, body) {
-            $ = cheerio.load(body);
-            $("head").prepend('<base href="https://payment-stage.allpay.com.tw" target="_blank"/>');
-            res.send($.html());
-        });
-    });
-});
 
-
-
-
-// router.post('/send', function(req, res, next) {
-//     request.post({
-//         url: 'https://payment-stage.allpay.com.tw/AioHelper/GenCheckMacValue',
-//         form: req.body
-//     }, function(err, httpResponse, body) {
-//         request.post({
-//             url: 'https://payment-stage.allpay.com.tw/Cashier/AioCheckOut/V2',
-//             form: {
-//                 MerchantID: req.body.MerchantID,
-//                 MerchantTradeNo: req.body.MerchantTradeNo,
-//                 MerchantTradeDate: req.body.MerchantTradeDate,
-//                 PaymentType: req.body.PaymentType,
-//                 TotalAmount: req.body.TotalAmount,
-//                 TradeDesc: req.body.TradeDesc,
-//                 ItemName: req.body.ItemName,
-//                 ReturnURL: req.body.ReturnURL,
-//                 ChoosePayment: req.body.ChoosePayment,
-//                 CheckMacValue: body,
-//             }
-//         }, function(err, httpResponse, body) {
-//             res.send('https://payment-stage.allpay.com.tw/'+body);
-//         });
-//     });
-// });
-
-// router.post('/send',function(req,res){
-//     firstPost(function(data){
-//         twoPost(data);
-//         console.log('success');
-//     })
-// });
 
 module.exports = router
