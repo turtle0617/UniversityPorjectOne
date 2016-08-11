@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>change demo</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <select name="sweets" multiple="multiple" id="aaa">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4" >4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+    <select name="sweets" multiple="multiple" id="bbb">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4" selected="selected">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+    <div></div>
+    <span id="span1"> </span>
+    <span id="span2"> </span>
+    <span id="span3"> </span>
+    <script>
+    $("#aaa,#bbb")
+        .change(function() {
+            var str = "";
+            $("#aaa").each(function() {
+                str = $(this).val() * 120;
+            });
+            var str2 = "";
+            $("#bbb").each(function() {
+                str2 = $(this).val() * 150;
+            });
+            console.log(str);
+            console.log(str2);
+            $("#span1").text(str );
+
+            $("#span2").text(str2);
+
+            $("#span3").text(str + str2);
+        })
+        .change();
+    </script>
+</body>
+
+</html>

@@ -73,6 +73,33 @@
  					width:200px;
  					margin:5px auto;
  				}
+ 				#choice{
+ 					font-size: 1.2em;
+ 					width: 40%;
+ 					margin: 0 auto;
+
+ 					.name_wallet{
+ 						font-size:1.3em;
+ 						font-family:Microsoft JhengHei;
+ 						text-align: center;
+ 						font-weight: bolder;
+ 					}
+ 					td{ 
+ 						input[type=checkbox]{
+ 							/* Double-sized Checkboxes */
+ 							-ms-transform: scale(2); /* IE */
+ 							-moz-transform: scale(2); /* FF */
+ 							-webkit-transform: scale(2); /* Safari and Chrome */
+ 							-o-transform: scale(2); /* Opera */
+ 							margin: 8px;
+ 						}
+ 						padding: auto 3px;
+ 						select{
+ 							display: inline-block;
+ 							width: auto;
+ 						}
+ 					}
+ 				}
  			}
 
  		}

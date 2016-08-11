@@ -1,27 +1,34 @@
 <html>
 
 <head>
-
     <link href="../style/screen.css" type="text/css" rel="stylesheet">
-    
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    
     <!-- jquery -->
-
-
-
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- css -->
     <link href="../style/style.css" type="text/css" rel="stylesheet">
     <link href="../style/style_m.css" type="text/css" rel="stylesheet">
     <meta charset="utf-8" />
+    <script>
+    function check() {
+        if (document.forma.Name.value.length == 0 || document.forma.Email.value.length == 0 || document.forma.Phone.value.length == 0 || document.forma.Place.value.length == 0) {
+            alert("還有東西沒填完喔！");
+            return false;
+        } else {
+            return true;
+        }
+    }
+    </script>
 </head>
 
 <body>
     <div id="main">
         <header>
             <div class="logo"></div>
-            <div class="title"><h1>手繪。趣<h1></div>
+            <div class="title">
+                <h1>手繪。趣<h1></div>
         </header>
 
         <div id="video"><!-- 影片 -->
@@ -38,8 +45,8 @@
                 <p>還在猶豫要穿什麼鞋出門嗎?</p>
                 <p>別猶豫了，立即客製化屬於自己，獨一無二的手繪鞋。</p>
                 <p>用手繪的溫度溫暖你的腳心~</p>
-            </div><!-- 文字介紹 -->
-
+            </div>
+            <!-- 文字介紹 -->
             <div class="tool col-lg-3 .col-md-12">
                 <div>
                     <p>告訴朋友!</p>
@@ -51,110 +58,182 @@
                         <img src="../image/Google_plus.png">
                     </a>
                     <a target="_blank" href="http://twitter.com/home/?status=http://www.books.com.tw/">
-                        <img src="../image/Twitter.png"><br/>
+                        <img src="../image/Twitter.png">
+                        <br/>
                     </a>
                 </div>
                 <div class="bt">
                     <a href="#order">
-                        <button type="button" class="btn btn-warning">立即購買</button></a><br/>
-                    <a href="https://www.facebook.com/%E6%89%8B%E7%B9%AA%E8%B6%A3-1632470530400307/?fref=ts#"
-                        <button  type="button" class="btn btn-primary">客製化</button>
+                        <button type="button" class="btn btn-warning">立即購買</button>
+                    </a>
+                    <br/>
+                    <a href="https://www.facebook.com/%E6%89%8B%E7%B9%AA%E8%B6%A3-1632470530400307/?fref=ts#" <button type="button" class="btn btn-primary">客製化</button>
                     </a>
                 </div>
-            </div> <!-- 功能按鍵 --> 
-        </div>
-        
-        <div id="show" class="col-lg-12"><!-- 商品樣式 -->
-            <div id="show_1">
-                <div class="counters col-lg-6">
-                    <img src="../image/1.jpg">
-                </div>
-                <div class="counters col-lg-6">
-                    <h2>手繪零錢包</h2>
-                    <hr/>
-                </div>
             </div>
-            <div id="show_2">
-                <div class="counters col-lg-6">
-                    <h2>手繪</h2>
-                    <hr/>
-                </div>
-                <div class="counters col-lg-6">
-                    <img src="../image/2.jpg">
-                </div>
+            <!-- 功能按鍵 -->
+    </div>
+    <div id="show" class="col-lg-12">
+        <!-- 商品樣式 -->
+        <div id="show_1">
+            <div class="counters col-lg-6">
+                <img src="../image/1.jpg">
             </div>
-            <div id="show_3">
-                <div class="counters col-lg-6">
-                    <img src="../image/3.jpg">
-                </div>
-                <div class="counters col-lg-6">
-                    <h2>手繪</h2>
-                    <hr/>
-                </div>
+            <div class="counters col-lg-6">
+                <h2>手繪零錢包</h2>
+                <hr/>
             </div>
         </div>
-        
-        <div id="order" class="col-lg-12"><!-- 訂單 -->
-            <h2>訂單</h2>
+        <div id="show_2">
+            <div class="counters col-lg-6">
+                <h2>手繪</h2>
+                <hr/>
+            </div>
+            <div class="counters col-lg-6">
+                <img src="../image/2.jpg">
+            </div>
+        </div>
+        <div id="show_3">
+            <div class="counters col-lg-6">
+                <img src="../image/3.jpg">
+            </div>
+            <div class="counters col-lg-6">
+                <h2>手繪</h2>
+                <hr/>
+            </div>
+        </div>
+    </div>
+    <div id="order" class="col-lg-12">
+        <!-- 訂單 -->
+        <h2>訂單</h2>
+        <hr/>
+        <form method="post" name="forma" action="/send" id="order_form" onsubmit="return check()">
+            <p>
+                <span>姓名:</span>
+                <input type="text" class="form-control text_width" placeholder="王小明(收件人)" name="Name">
+            </p>
+            <p>
+                <span>Email:</span>
+                <input type="email" class="form-control text_width" placeholder="Email" name="Email">
+            </p>
+            <p>
+                <span>手機:</span>
+                <input type="text" class="form-control text_width" placeholder="0912345678" name="Phone">
+            </p>
+            <p>
+                <span>地址:</span>
+                <input type="text" class="form-control text_width" name="Place">
+            </p>
+            <table id="choice" class="table">
+                <!--商品1-->
+                <tr class="">
+                    <td class="name_wallet">柯基零錢包</td>
+                    <td>數量:
+                        <select class="form-control" id="bag1" name="bag1">
+                            <option value="0" selected="selected">數量</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </td>
+                </tr>
+                <!--商品2-->
+                <tr class="">
+                    <td class="name_wallet">柴犬零錢包</td>
+                    <td>數量:
+                        <select class="form-control" id="bag2" name="bag2">
+                            <option value="0" selected="selected">數量</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </td>
+                </tr>
+                <!--商品3-->
+                <tr class="">
+                    <td class="name_wallet">小丑女零錢包</td>
+                    <td>數量:
+                        <select class="form-control" id="bag3" name="bag3">
+                            <option value="0" selected="selected">數量</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <p></p>
+            <!-- <p><span>備註(需詳細討論可至<a href="https://www.facebook.com/%E6%89%8B%E7%B9%AA%E8%B6%A3-1632470530400307/?notif_t=page_admin&notif_id=1469089467434946">fb專頁</a>):</span>
+                <textarea class="form-control" form="order_form" rows="3" placeholder="圖案位置、顏色"></textarea>
+            </p>
+ -->
+            <p>
+                <span>金額</span>
+                <input type="text" class="form-control text_width" id="TotalAmount" name="TotalAmount" readonly>
+            </p>
+            <p>
+                <span>選擇預設付款方式:</span>
+                <select name="ChoosePayment">
+                    <option value="Credit">Credit</option>
+                    <option value="WebATM">WebATM</option>
+                    <option value="ATM">ATM</option>
+                    <option value="CVS">超商代碼</option>
+                    <option value="BARCODE">超商條碼</option>
+                </select>
+            </p>
+            <input type="submit" class="btn btn-primary" value="送出">
+        </form>
+    </div>
+    <div id="QandA" class="col-lg-12">
+        <!-- Q & A -->
+        <!-- fb api -->
+        <div class="usually">
+            <h1> 常見問答 </h1>
             <hr/>
-            <form method="post" action="/send" id="order_form">
-                <p>
-                    <span>姓名*:</span>
-                    <input type="email" class="form-control text_width"  placeholder="王小明(收件人)">
-                </p>
-                
-                <p>
-                    <span>Email:</span>
-                    <input type="email" class="form-control text_width"  placeholder="Email">
-                </p>
-                
-                <p>
-                    <span>手機*:</span>
-                    <input type="email" class="form-control text_width"  placeholder="0912345678">
-                </p>
-                
-                <p>
-                    <span>底色:</span>
-                </p>
-                
-                <p>
-                    <span>數量:</span>
-                </p>
-                
-                <p>
-                    <span>圖案(可複選，):</span>
-                </p>
+            <p class="question">Q : 請問如何付款?</p>
+            <p class="ans">A : 目前我們的付款方式有超商付款、信用卡付款、歐付寶付款</p>
+            <p class="question">Q : 怎麼客製化商品?可以大量印製嗎?</p>
+            <p class="ans">A : 不好意思，目前我們是以人工手繪為主，無法大量訂製。
+                <br/> 關於客製化，您可以聯絡我們粉絲專頁，我們有提供各種顏色、樣式供您參考，價格方面需另外計價。
+            </p>
+        </div>
+    </div>
+    <footer class="col-lg-12">
+        <h3>關於我們</h3>
+        <span>聯絡方式 | <a>粉絲團</a></span>
+    </footer>
+    </div>
+    <script>
+    $("#bag1,#bag2,#bag3")
+        .change(function() {
+            var bag1 = "";
+            $("#bag1").each(function() {
+                bag1 = $(this).val() * 120;
+            });
+            var bag2 = "";
+            $("#bag2").each(function() {
+                bag2 = $(this).val() * 120;
+            });
+            var bag3 = "";
+            $("#bag3").each(function() {
+                bag3 = $(this).val() * 150;
+            });
+            // console.log(bag1);
+            // console.log(bag2);
+            // $("#span1").text(bag1);
 
+            // $("#span2").text(bag2);
 
-                <p><span>備註(需詳細討論可至<a href="https://www.facebook.com/%E6%89%8B%E7%B9%AA%E8%B6%A3-1632470530400307/?notif_t=page_admin&notif_id=1469089467434946">fb專頁</a>):</span>
-                    <textarea class="form-control" form="order_form" rows="3" placeholder="圖案位置、顏色"></textarea></p>
+            $("#TotalAmount").val(bag1 + bag2 + bag3);
+        })
+        .change();
+    </script>
+</body>
 
-
-                    <input type="submit" class="btn btn-primary" value="送出">
-                </form>
-
-            </div>
-
-            <div id="QandA" class="col-lg-12"><!-- Q & A -->
-                <!-- fb api -->
-                <div class="usually">
-                    <h1> 常見問答 </h1>
-                    <hr/>
-                    <p class="question">Q : 請問如何付款?</p>
-                    <p class="ans">A : 目前我們的付款方式有超商付款、信用卡付款、歐付寶付款</p>
-                    <p class="question">Q : 怎麼客製化商品?可以大量印製嗎?</p>
-                    <p class="ans">A : 不好意思，目前我們是以人工手繪為主，無法大量訂製。<br/>
-                        關於客製化，您可以聯絡我們粉絲專頁，我們有提供各種顏色、樣式供您參考，價格方面需另外計價。</p>
-                    </div>
-
-
-                </div>
-
-                <footer class="col-lg-12">
-                    <h3>關於我們</h3>
-                    <span>聯絡方式 | <a>粉絲團</a></span>
-                </footer>
-            </div>
-        </body>
-
-        </html>
+</html>

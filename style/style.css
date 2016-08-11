@@ -108,32 +108,67 @@ h1, h2, h3 {
     width: 200px;
     margin: 5px auto;
   }
-  /* line 79, ../sass/style.scss */
+  /* line 76, ../sass/style.scss */
+  #main #order form #choice {
+    font-size: 1.2em;
+    width: 40%;
+    margin: 0 auto;
+  }
+  /* line 81, ../sass/style.scss */
+  #main #order form #choice .name_wallet {
+    font-size: 1.3em;
+    font-family: Microsoft JhengHei;
+    text-align: center;
+    font-weight: bolder;
+  }
+  /* line 87, ../sass/style.scss */
+  #main #order form #choice td {
+    padding: auto 3px;
+  }
+  /* line 88, ../sass/style.scss */
+  #main #order form #choice td input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2);
+    /* IE */
+    -moz-transform: scale(2);
+    /* FF */
+    -webkit-transform: scale(2);
+    /* Safari and Chrome */
+    -o-transform: scale(2);
+    /* Opera */
+    margin: 8px;
+  }
+  /* line 97, ../sass/style.scss */
+  #main #order form #choice td select {
+    display: inline-block;
+    width: auto;
+  }
+  /* line 106, ../sass/style.scss */
   #main #QandA {
     height: 700px;
     padding: 100px;
     background-color: #A7D6FA;
   }
-  /* line 83, ../sass/style.scss */
+  /* line 110, ../sass/style.scss */
   #main #QandA .usually {
     background-color: #FFF;
     padding: 50px;
   }
-  /* line 86, ../sass/style.scss */
+  /* line 113, ../sass/style.scss */
   #main #QandA .usually h1 {
     margin-bottom: 50px;
   }
-  /* line 87, ../sass/style.scss */
+  /* line 114, ../sass/style.scss */
   #main #QandA .usually p {
     text-align: left;
     font-size: 1.2em;
     font-family: Microsoft JhengHei;
   }
-  /* line 92, ../sass/style.scss */
+  /* line 119, ../sass/style.scss */
   #main #QandA .usually .question {
     margin-top: 50px;
   }
-  /* line 99, ../sass/style.scss */
+  /* line 126, ../sass/style.scss */
   #main footer {
     padding: 10px;
     height: 120px;

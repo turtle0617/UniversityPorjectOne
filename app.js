@@ -4,6 +4,9 @@ var express = require('express'),
 
 app.use("/image", express.static(__dirname + '/image'));
 
+app.use("/js", express.static(__dirname + '/js'));
+
+
 app.use("/style", express.static(__dirname + '/style'));
 
 app.use(require('./router/index'));

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <script>
+    // function Total() {
+    //     var form = document.getElementById('form_a')
+    //     console.log(form.bag1.vlaue);
+    // bag1 = form.bag1.vaule;
+    // bag2 = form.bag2.vaule;
+    // bag3 = form.bag3.vaule;
+
+    // txt1 = document.getElementById('bag1').value;
+    // txt2 = document.getElementById('bag2').value;
+    // txt3 = document.getElementById('bag3').value;
+
+    // (bag1 != "") ? bag1 = parseInt(bag1, 10): bag1 = 0;
+    // (bag2 != "") ? bag2 = parseInt(bag2, 10): bag2 = 0;
+    // (bag3 != "") ? bag3 = parseInt(bag3, 10): bag3 = 0;
+
+    // total = bag1 + bag2 + bag3;
+    // document.getElementById('span1').innerHTML = total;
+
+    // }
+    </script>
+</head>
+
+<body>
+    <form name='form_a'>
+        <table id="choice" class="table">
+            <!--商品1-->
+            <tr class="">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td class="name_wallet">柯基零錢包</td>
+                <td>數量:
+                    <select class="form-control" id="bag1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <!--商品2-->
+            <tr class="">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td class="name_wallet">柴犬零錢包</td>
+                <td>數量:
+                    <select class="form-control" name="bag2" onchange="Total()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <div></div>
+
+                </td>
+            </tr>
+            <!--商品3-->
+            <tr class="">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td class="name_wallet">小丑女零錢包</td>
+                <td>數量:
+                    <select class="form-control" name="bag3" onchange="Total()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    <!-- <input type="text" id="textfield" name="textfield" onchange="Total()" />
+    <input type="text" id="textfield2" name="textfield2" onchange="Total()" />
+    <input type="text" id="textfield3" name="textfield3" onchange="Total()" />
+    <br />
+    <span class="style10" id="span1"> </span> -->
+    <script type="text/javascript">
+    $("bag1")
+        .change(function() {
+            var str = "";
+            $("select option:selected").each(function() {
+                str += $(this).text() + " ";
+            });
+            $("span1").text(str);
+        })
+        .change();
+    </script>
+</body>
+
+</html>
